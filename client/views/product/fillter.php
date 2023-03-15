@@ -4,9 +4,9 @@
 <section>
     <div class="tab">
       <div class="tab-list">
-        <a class="tab-item" href="<?= BASE_URL . 'san-pham'?>">All product</a>
+       <a class="tab-item " href="<?= BASE_URL . 'san-pham'?>">All product</a>
         <?php foreach ($listCategory as $cate) : ?>
-       <a class="tab-item" href="<?= BASE_URL . 'loc-san-pham?id=' . $cate['id'] ?>"><?= $cate['categoryName'] ?></a>
+         <a class="tab-item" href="<?= BASE_URL . 'loc-san-pham?id=' . $cate['id'] ?>"><?= $cate['categoryName'] ?></a>
         <?php endforeach ?>
       </div>
     </div>
@@ -50,7 +50,7 @@
   </ul>
 </div>
 
-<nav>
+<nav class="hidden">
   <ul class="text-center m-16">
     <?php
     for ($i = 1; $i <= ceil($countProduct[0]['SUM'] / 10); $i++) {

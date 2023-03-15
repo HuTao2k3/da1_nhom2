@@ -24,6 +24,8 @@ function addPro(){
     $categoryId = $_POST["cateid"];
     $discount  = $_POST['discount'];
     $view = $_POST['view'];
+    $status = $_POST['status'];
+    $size = $_POST['size'];
     $file = $_FILES['image'];
     $filename = "";
       if ($file['size'] > 0) {
@@ -32,7 +34,7 @@ function addPro(){
           $filename = 'upload/'. $filename;
       } 
 
-    $sql = "INSERT INTO `products`(`id`,`name`, `image`, `desc`, `id_category`, `price`, `view` , `discount`) VALUES ('$id','$productName', '$filename', '$productDesc',' $categoryId','$productPrice','$view' , `$discount`)";
+    $sql = "INSERT INTO `products`(`id`, `name`, `image`, `desc`, `id_category`, `price`, `view`, `discount`, `status`, `size`) VALUES ('$id','$productName','$filename','$productDesc','$categoryId','$productPrice','$view','$discount','$status','$size')";
     move_uploaded_file($_FILES["image"]["tmp_name"],"./public/upload/".$_FILES["image"]["name"]);
     pdo_execute($sql); 
     header('location:'. ADMIN_URL . '/san-pham'); 
@@ -53,6 +55,7 @@ function addPro(){
   $categoryId = $_POST["cateid"];
   $view = $_POST['view'];
   $discount  = $_POST['discount'];
+  $status = $_POST['status'];
   $file = $_FILES['image'];
   $filename = "";
     if ($file['size'] > 0) {
@@ -61,9 +64,9 @@ function addPro(){
         $filename ='upload/'.$filename;
     } 
     if ($filename != "") {
-   $sql = "UPDATE `products` SET `id`='$id',`name`=' $productName',`image`='$filename',`desc`='$productDesc',`id_category`='$categoryId',`price`='$productPrice',`view`=' $view' , `discount` = $discount  WHERE id=$id";
+   $sql = "UPDATE `products` SET `id`='$id',`name`=' $productName',`image`='$filename',`desc`='$productDesc',`id_category`='$categoryId',`price`='$productPrice',`view`=' $view' , `discount` = $discount , `status` = $status  WHERE id=$id";
     }else {
-      $sql = "UPDATE `products` SET `id`='$id',`name`=' $productName',`desc`='$productDesc',`id_category`='$categoryId',`price`='$productPrice',`view`=' $view' ,`discount` = $discount WHERE id=$id";
+      $sql = "UPDATE `products` SET `id`='$id',`name`=' $productName',`desc`='$productDesc',`id_category`='$categoryId',`price`='$productPrice',`view`=' $view' ,`discount` = $discount,`status` = $status WHERE id=$id";
     }
   pdo_execute($sql);
   header("location:" . ADMIN_URL . 'san-pham');

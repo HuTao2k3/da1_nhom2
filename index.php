@@ -4,6 +4,7 @@ $url = isset($_GET['url']) ? rtrim($url = $_GET['url'], '/') : "/";
 require_once "./commons/utils.php";
 require_once "./dao/pdo.php";
 require_once "./admin/business/category.php";
+require_once "./client/business/category.php";
 switch ($url) {
         // =========Trang chủ===========
     case "/":
@@ -11,14 +12,19 @@ switch ($url) {
         home(10);
         break;
         
-    case "tat-ca-san-pham":
+    case "san-pham":
         require_once "./client/business/product.php";
-        loadAllProduct();
+        Paging();
         break;
 
     case "chi-tiet-san-pham":
         require_once "./client/business/product.php";
         detailProduct();
+        break;
+        
+    case "loc-san-pham":
+        require_once "./client/business/product.php";
+        filter();
         break;
         //========Trang chủ=============
 
@@ -87,6 +93,7 @@ switch ($url) {
         require_once "./admin/business/product.php";
         updatePro();
         break;
+        
     default:
         echo "404 NOT FOUND";
 }

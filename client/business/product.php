@@ -1,25 +1,79 @@
 <?php
 function loadAllProduct()
 {
-        $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : ''; 
-    /* Executing the query and returning the results as an array. */
-        $sql = "SELECT * FROM `products` WHERE `name` LIKE '%$keyword%'";      
-        $products = pdo_query($sql);
-        // hiển thị view
-        clientRender('product/index.php',compact('products','keyword'));
+  $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
+  $sql = "SELECT * FROM `products` WHERE `name` LIKE '%$keyword%'";
+  $products = pdo_query($sql);
+  // hiển thị view
+  clientRender('product/index.php', compact('products', 'keyword'));
 }
+
+// -----đếm tổng số sản phẩm---------
+function countProduct()
+{
+  $sql = "SELECT COUNT(*) AS SUM FROM `products`";
+  $amountProduct = pdo_query($sql);
+  return $amountProduct;
+}
+
+function getSomeProduct($start, $end)
+{
+  $keyword = isset($_GET['keyword']) ? $_GET['keyword'] : '';
+  $sql = "SELECT * FROM `products` WHERE `name` LIKE '%$keyword%' ORDER BY id DESC LIMIT " . $start . "," . "$end";
+  $listProduct = pdo_query($sql);
+  $countProduct = countProduct();
+  $listCategory = getAllCate();
+  clientRender('product/index.php', compact('listProduct', 'countProduct', 'keyword', 'listCategory'));
+}
+//----------điều kiện ----------
+function Paging()
+{
+  if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+  } else {
+    $page = 1;
+  }
+  if ($page == 1 || $page < 1) {
+    $start = 0;
+    $end = 10;
+  } else {
+    $start = ($page * 10) - 10;
+    $end = $page * 10;
+  }
+  getSomeProduct($start, $end);
+}
+
 function getCateDetail()
 {
-   $id = $_GET['id'];
-   $sql = "SELECT * FROM `category` WHERE id=$id";
-   $cate = pdo_query_one($sql);
- }
-function detailProduct(){
-        $id = $_GET['id'];
-        $sql = "SELECT * FROM products where id=$id";
-        $pro = pdo_query_one($sql);
-        // dd($pro);
-        $cate = getCateDetail();
-        clientRender('product/detail.php',compact('pro','cate'));
+  $id = $_GET['id'];
+  $sql = "SELECT * FROM `category` WHERE id=$id";
+  $cate = pdo_query_one($sql);
 }
-?>
+
+function detailProduct()
+{
+  $id = $_GET['id'];
+  $sql = "SELECT * FROM products where id=$id";
+  $pro = pdo_query_one($sql);
+  // dd($pro);
+  $cate = getCateDetail();
+  clientRender('product/detail.php', compact('pro', 'cate'));
+}
+function searchByCategory($id)
+{
+  $sql = "SELECT * FROM `products` WHERE id_category=" . $id;
+  // dd($sql);
+  $amountProduct = pdo_query($sql);
+  // dd($amountProduct);
+  return $amountProduct;
+}
+function filter()
+{
+  if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+  };
+  $listProduct = searchByCategory($id);
+  //lọc xong render lại
+  $listCategory = getAllCate();
+  clientRender('product/fillter.php', compact('listProduct', 'listCategory'));
+}

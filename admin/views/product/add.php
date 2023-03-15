@@ -52,6 +52,15 @@
                 </select>
             </div>
 
+            <div class="form-group">
+        <label for="">Tình trạng</label>
+        <select name="status" class=" mb-2 border-2 rounded block w-full" id="">
+            <option value="1">Hết hàng</option>
+            <option value="0">Còn hàng</option>
+        </select>
+            </div>
+
+        <input type="text" name="size" class="hidden">
             <div class="card-footer">
                 <button type="submit" class="border-2 mt-3 mr-3 text-[17px] border-[#3c91e6] rounded bg-[#3c91e6] text-white px-3 py-2">Submit</button>
             </div>

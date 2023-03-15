@@ -22,6 +22,7 @@
                     <th class="">Discount</th>
                     <th class="">Category</th>
                     <th class="">View</th>
+                    <th class="">Status</th>
                     <th class="">Action</th>
                 </tr>
             </thead>
@@ -35,7 +36,7 @@
                             <p><?= $pro['desc']?></p>
                         </td>
                         <td><p class="w-[10%] pr-10"><?= $pro['price'] ?></p></td>
-                        <td><p class="pr-20"><?= $pro['discount'] ?></p></td>
+                        <td><p class="pr-16"><?= $pro['discount'] ?></p></td>
                         <td class=" pr-10">
                             <?php
                             $id = $pro['id_category'];
@@ -46,6 +47,7 @@
                         <td class="pr-10">
                             <?= $pro['view']?>
                         </td>
+                        <td class="pr-10"><?php echo $pro['status'] == 1 ? 'Hết hàng' : 'Còn hàng' ?></td>
                         <td class="w-[9%]">
                             <a href="javascript:;" onclick="confirmRemove('<?= ADMIN_URL . 'san-pham/xoa?id=' . $pro['id'] ?>', '<?= $pro['name'] ?>')"><button class="border-2 border-red-500 rounded bg-red-500"><i class='text-[20px] p-2 bx bx-trash'></i></button></a>
                             <a href="<?= ADMIN_URL . 'san-pham/get-san-pham?id=' . $pro['id'] ?>"><button class="border-2 border-green-500 rounded bg-green-500 "><i class='text-[20px] p-2 bx bxs-edit'></i></button></a>

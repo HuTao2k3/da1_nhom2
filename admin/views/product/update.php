@@ -44,7 +44,7 @@
             <div class="form-group">
                 <label class="inline mb-2" for="exampleInputFile">Category</label>
                 <?php $category = loadAllCate()?>
-                <select class=" mb-2 border-2 rounded block" name="cateid">
+                <select class=" mb-2 border-2 rounded block w-full" name="cateid">
                     <?php foreach ($category as $cate):?>
                         <option value="<?php echo $cate['id'] ?>" <?php if ($cate['id'] == $pro['id_category']) {
                         echo "selected";
@@ -52,7 +52,17 @@
                         <?php endforeach ?>
                 </select>
             </div>
-
+            <div class="form-group">
+            <label for="">Tình trạng</label>
+            <select name="status" class=" mb-2 border-2 rounded block w-full">
+                <option value="1" <?php if (1 == $pro['status']) {
+                                        echo "selected";
+                                    } ?>>Hết hàng</option>
+                <option value="0" <?php if (0 == $pro['status']) {
+                                        echo "selected";
+                                    } ?>>Còn hàng</option>
+            </select>
+            </div>
             <div class="card-footer">
                 <button type="submit" class="border-2 mt-3 mr-3 text-[17px] border-[#3c91e6] rounded bg-[#3c91e6] text-white px-3 py-2">Update</button>
             </div>

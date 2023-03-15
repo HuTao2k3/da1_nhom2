@@ -9,10 +9,12 @@
     <link rel="stylesheet" href="<?= USER_ASSET?>/css/style.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<header class="header" data-header>
+  <div class="progress"></div> 
+  <header class="header" data-header>
     <div class="container">
 
       <div class="overlay" data-overlay></div>
@@ -25,7 +27,7 @@
         </button>
       </form>
 
-      <a href="#" class="logo">
+      <a href="<?= BASE_URL ?>" class="logo">
         <img src="<?= USER_ASSET ?>/images/logo.svg" alt="Casmart logo" width="130" height="31">
       </a>
 
@@ -84,11 +86,11 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="#home" class="navbar-link">Home</a>
+            <a href="<?= BASE_URL?>" class="navbar-link">Home</a>
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Shop</a>
+            <a href="<?= BASE_URL . 'san-pham'?>" class="navbar-link">Shop</a>
           </li>
 
           <li>

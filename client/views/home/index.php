@@ -140,7 +140,7 @@
     <ul class="filter-list">
 
       <li>
-        <button class="filter-btn  active">Best Seller</button>
+        <button class="filter-btn  active">Most Views</button>
       </li>
 
       <li>
@@ -182,7 +182,7 @@
           </figure>
           <div class="card-content">
             <h3 class="h4 card-title short">
-              <a href="#"><?= $pro['name']?></a>
+              <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id']?>"><?= $pro['name']?></a>
             </h3>
             <div class="card-price">
               <data value="25.00"><?= number_format($pro['price'])?>đ</data>
@@ -194,7 +194,7 @@
       <?php endforeach?>
     </ul>
 
-    <a href="<?= BASE_URL . 'tat-ca-san-pham'?>"><button class="btn btn-outline">View All Products</button></a>
+    <a href="<?= BASE_URL . 'san-pham'?>"><button class="btn btn-outline">View All Products</button></a>
   </div>
 </section>
 
