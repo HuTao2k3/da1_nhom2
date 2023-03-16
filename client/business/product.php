@@ -43,21 +43,13 @@ function Paging()
   getSomeProduct($start, $end);
 }
 
-function getCateDetail()
-{
-  $id = $_GET['id'];
-  $sql = "SELECT * FROM `category` WHERE id=$id";
-  $cate = pdo_query_one($sql);
-}
-
 function detailProduct()
 {
   $id = $_GET['id'];
   $sql = "SELECT * FROM products where id=$id";
   $pro = pdo_query_one($sql);
   // dd($pro);
-  $cate = getCateDetail();
-  clientRender('product/detail.php', compact('pro', 'cate'));
+  clientRender('product/detail.php', compact('pro'));
 }
 function searchByCategory($id)
 {

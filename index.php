@@ -5,6 +5,11 @@ require_once "./commons/utils.php";
 require_once "./dao/pdo.php";
 require_once "./admin/business/category.php";
 require_once "./client/business/category.php";
+//-----------mailer-------------
+require_once './PHPMailer-master/src/PHPMailer.php';
+require_once './PHPMailer-master/src/SMTP.php';
+require_once './PHPMailer-master/src/Exception.php';
+
 switch ($url) {
         // =========Trang chủ===========
     case "/":
@@ -26,9 +31,18 @@ switch ($url) {
         require_once "./client/business/product.php";
         filter();
         break;
+ 
         //========Trang chủ=============
 
         // =========admin==============
+    case "web-management/lien-he":
+        require_once "./admin/business/contactUser.php";
+        mailForm();
+            break;
+    case "web-management/gui-mail":
+        require_once "./admin/business/contactUser.php";
+        sendMail();
+                break;
     case "web-management":
         require_once "./admin/business/dashboard.php";
         dashboardIndex();

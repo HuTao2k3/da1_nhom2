@@ -219,7 +219,6 @@
 
         <button type="submit" class="btn btn-primary w-100 bg-black hover:bg-white">
           <span>Subscribe</span>
-
           <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
         </button>
 

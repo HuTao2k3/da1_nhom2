@@ -34,12 +34,18 @@
 				<span class="text">Account</span>
 			</a>
 		</li>
+		<li>
+			<a href="<?= ADMIN_URL  . 'lien-he'?>">
+			<i class='bx bx-envelope'></i>
+				<span class="text">Send mail</span>
+			</a>
+		</li>
 	</ul>
 	<ul class="side-menu">
 		<li>
 			<a href="#">
 				<i class='bx bxs-cog'></i>
-				<span class="text">Settings</span>
+				<span class="text">Setting</span>
 			</a>
 		</li>
 		<li>
