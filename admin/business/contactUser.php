@@ -16,9 +16,9 @@ function sendMail(){
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 465; // or 587
     $mail->IsHTML(true);
-    $mail->Username = "tkmanh032911@gmail.com"; //người gửi
-    $mail->Password = "wxhgkrpprirorviz"; //Mật khẩu ứng dụng
-    $mail->SetFrom("tkmanh032911@gmail.com");
+    $mail->Username = "kmanh2894@gmail.com"; //người gửi
+    $mail->Password = "wmmtoaspinshbgim"; //Mật khẩu ứng dụng
+    $mail->SetFrom("Thông báo");
     $mail->Subject = $title;
     $mail->Body = $content;
     $arrEmail = explode(',',$reccevier);
