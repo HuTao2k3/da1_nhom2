@@ -11,4 +11,3 @@ function loadOneCateDetail($id)
      return $category;  
  }
 ?>
-asdasdasd

@@ -31,7 +31,35 @@ switch ($url) {
         require_once "./client/business/product.php";
         filter();
         break;
- 
+    case 'form-dangky':
+        require_once "./client/business/taikhoan.php";
+        form_dangky();
+        break;
+
+    case 'dangky':
+        require_once "./client/business/taikhoan.php";
+        dangky();
+        break;
+    case 'dangnhap':
+        require_once "./client/business/taikhoan.php";
+        dangnhap();
+        break;
+    case 'form-dangnhap':
+        require_once "./client/business/taikhoan.php";
+        form_dangnhap();
+        break;
+    case 'edit-taikhoan':        
+        require_once "./client/business/taikhoan.php";
+        edit_taikhoan();
+        break;
+    case 'form-edit-taikhoan':
+        require_once "./client/business/taikhoan.php";
+        form_edit_taikhoan();
+        break;
+    case 'thoat':
+        session_unset();
+        header('Location:'.BASE_URL);
+        break;
         //========Trang chủ=============
 
         // =========admin==============
