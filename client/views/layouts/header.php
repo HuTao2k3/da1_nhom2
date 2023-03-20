@@ -14,6 +14,8 @@
 </head>
 <body>
   <div class="progress"></div> 
+
+
   <header class="header" data-header>
     <div class="container">
 
@@ -32,13 +34,35 @@
       </a>
 
       <div class="header-actions">
-
+<div class="sigin">
+<?php
+     if (isset($_SESSION['user'])) {
+                extract($_SESSION['user']);
+            ?>
+            <div class="flex">
+            <ion-icon class="text-xl pr-1" name="person-outline" aria-hidden="true"></ion-icon><a href="<?= BASE_URL . 'form-edit-taikhoan' ?>"><?=$user?></a>
+              <?php
+                if ($role === 1) {
+              ?>
+              <li><a href="#">Đăng Nhập Admin</a></li>
+              <?php } ?>
+                   <li>
+          <a class="inline px-3 py-1 ml-2 border-black border  bg-white text-black rounded hover:bg-black hover:text-white"  href="<?= BASE_URL . 'thoat'?>">Logout</a>
+              </li>
+      <li>
+    </div>
+      <?php    
+        }else{ ?>
+          <div>
+        <a href="<?= BASE_URL . 'form-dangnhap' ?>">
         <button class="header-action-btn">
           <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label">Sign in</p>
+         <p class="header-action-label">Sign in</p>
         </button>
-
+        </a>
+        </div>
+        <?php } ?>
+</div>
         <button class="header-action-btn">
           <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
 
@@ -111,3 +135,5 @@
 
     </div>
   </header>
+
+                

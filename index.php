@@ -58,7 +58,7 @@ switch ($url) {
         break;
     case 'thoat':
         session_unset();
-        header('Location:'.BASE_URL);
+        header('Location:'. BASE_URL);
         break;
         //========Trang chủ=============
 

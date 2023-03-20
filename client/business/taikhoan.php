@@ -3,8 +3,7 @@
         clientRender('account/dangky.php');
     }
     function form_dangnhap(){
-        clientRender('account/dangnhap.php');
-        
+        clientRender('account/dangnhap.php');    
     }
     function form_edit_taikhoan(){
         clientRender('account/edit_taikhoan.php');
@@ -40,6 +39,7 @@ function dangky(){
       $pass=$_POST['pass'];
       insert_taikhoan($email,$user,$pass);
       $thongbao="Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận hoặc đặt hàng!";
+      header('location:' . BASE_URL . 'form-dangnhap');
   }
 
   }
@@ -55,9 +55,8 @@ function dangky(){
           // $thongbao="Bạn đã đăng nhập thành công!";
           header('Location:'.BASE_URL);
       }else{
-          $thongbao="Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
+        header('Location:'.BASE_URL);
       }                
-      clientRender('client/dangnhap.php');
   }
   }
   function edit_taikhoan(){
