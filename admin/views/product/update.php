@@ -64,7 +64,7 @@
             </select>
             </div>
             <div class="card-footer">
-                <button type="submit" class="border-2 mt-3 mr-3 text-[17px] border-[#3c91e6] rounded bg-[#3c91e6] text-white px-3 py-2">Update</button>
+                <button type="submit" name="btn" class="border-2 mt-3 mr-3 text-[17px] border-[#3c91e6] rounded bg-[#3c91e6] text-white px-3 py-2">Update</button>
             </div>
     </form>
 </div>

@@ -5,6 +5,7 @@ require_once "./commons/utils.php";
 require_once "./dao/pdo.php";
 require_once "./admin/business/category.php";
 require_once "./client/business/category.php";
+require_once "./client/business/size.php";
 //-----------mailer-------------
 require_once './PHPMailer-master/src/PHPMailer.php';
 require_once './PHPMailer-master/src/SMTP.php';

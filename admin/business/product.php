@@ -48,6 +48,7 @@ function addPro(){
       adminRender('product/update.php', compact('pro', 'category'));
   }
   function updatePro(){
+  if (isset($_POST['btn'])) {
   $id = $_POST['id'];
   $productName = $_POST["name"];
   $productDesc = $_POST["desc"];
@@ -68,6 +69,8 @@ function addPro(){
     }else {
       $sql = "UPDATE `products` SET `id`='$id',`name`=' $productName',`desc`='$productDesc',`id_category`='$categoryId',`price`='$productPrice',`view`=' $view' ,`discount` = $discount,`status` = $status WHERE id=$id";
     }
+  }
   pdo_execute($sql);
+  // dd($sql);
   header("location:" . ADMIN_URL . 'san-pham');
   }

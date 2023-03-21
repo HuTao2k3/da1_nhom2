@@ -69,9 +69,7 @@ function dangky(){
       $id=$_POST['id'];
       update_taikhoan($id,$user,$pass,$email,$address,$tel);  
       $_SESSION['user']=checkuser($user,$pass);                        
-          header('location:'.BASE_URL.'edit_taikhoan');  
-          clientRender('client/dangnhap.php');                                    
-      
+          header('location:'.BASE_URL.'form-edit-taikhoan');                                   
   }
   }
 ?>
