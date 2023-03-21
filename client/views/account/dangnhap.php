@@ -22,15 +22,15 @@
                 <?=$user?>
             </div>
             <div class="row mb10">
-              <li><a href="<?= BASER_URL . 'quenmk'?>">Quên mật khẩu</a></li>
-              <li><a href="<?= BASE_URL . 'edit-taikhoan'?>">Cập nhật tài khoản</a></li>
+              <li><a href="<?= BASE_URL . 'form-quenmk'?>">Forgot Password</a></li>
+              <li><a href="<?= BASE_URL . 'edit-taikhoan'?>">Update Account</a></li>
               <?php
                 if ($role == 1) {
 
               ?>
               <li><a href="#">Đăng Nhập Admin</a></li>
               <?php } ?>
-              <!-- <li><a href="<?= BASER_URL . 'thoat'?>">Thoát</a></li> -->
+              <!-- <li><a href="<?= BASE_URL . 'thoat'?>">Thoát</a></li> -->
             </div>
             <?php    
                 }else{
@@ -55,8 +55,8 @@
                 <input class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="submit" value="Login" name="dangnhap"/>
                 
                 <a class="text-white text-center block bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" href="<?= BASE_URL . 'form-dangky'?>">Register</a>
-                <!-- <li><a href="<?= BASER_URL . 'quenmk'?>">Quên mật khẩu</a></li>
-                <li><a href="<?= BASE_URL . 'dangky'?>">Đăng ký thành viên</a></li> -->
+                <li><a href="<?= BASE_URL . 'form-quenmk'?>">Quên mật khẩu</a></li>
+                <!-- <li><a href="<?= BASE_URL . 'dangky'?>">Đăng ký thành viên</a></li> -->
                 </form>
                 
             <?php } ?>

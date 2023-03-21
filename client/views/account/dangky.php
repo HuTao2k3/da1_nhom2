@@ -11,20 +11,20 @@
 <div class="row mb xl:container mx-auto">
     <div class="boxtrai mr">
         <div class="row mb">
-            <div class="boxtitle text-center font-bold text-lg mt-2">Đăng ký thành viên</div>
+            <div class="boxtitle text-center font-bold text-lg mt-2">Sign Up</div>
             <div class="row boxcontent formtaikhoan">
                 
                 <form action="<?= BASE_URL . 'dangky'?>" method="post" class="w-3/6 m-auto">
                 <div class="mb-6">
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your email</label>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Your Email</label>
                     <input type="email" name="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@gmail.com" >
                 </div>
                 <div class="mb-6">
-                    <label for="tendangnhap" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Tên đăng nhập</label>
+                    <label for="tendangnhap" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">User Name</label>
                     <input type="text" name="user" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" >
                 </div>
                 <div class="mb-6">
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Mật khẩu</label>
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">Password</label>
                     <input type="password" name="pass" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" >
                 </div>
                 <!-- <div class="flex items-start mb-6">

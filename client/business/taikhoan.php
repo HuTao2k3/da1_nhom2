@@ -8,6 +8,9 @@
     function form_edit_taikhoan(){
         clientRender('account/edit_taikhoan.php');
     }
+    function form_quenmk(){
+        clientRender('account/quenmk.php');
+    }
     function loadall_taikhoan(){
         $sql="select * from taikhoan order by id desc";
         $listtaikhoan=pdo_query($sql);
@@ -71,5 +74,18 @@ function dangky(){
       $_SESSION['user']=checkuser($user,$pass);                        
           header('location:'.BASE_URL.'form-edit-taikhoan');                                   
   }
+  }
+  function quen_mk(){
+    if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
+        $email=$_POST['email'];
+
+        $checkemail=checkemail($email);
+        if(is_array($checkemail)){
+            $thongbao="Mat khau cua ban la: ".$checkemail['pass'];
+        }else{
+            $thongbao="Email nay khong ton tai";
+        }
+    }
+    
   }
 ?>

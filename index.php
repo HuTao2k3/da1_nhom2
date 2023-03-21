@@ -57,6 +57,14 @@ switch ($url) {
         require_once "./client/business/taikhoan.php";
         form_edit_taikhoan();
         break;
+    case 'quenmk':
+        require_once "./client/business/taikhoan.php";
+        quen_mk();
+        break;
+    case 'form-quenmk':
+        require_once "./client/business/taikhoan.php";
+        form_quenmk();
+        break;
     case 'thoat':
         session_unset();
         header('Location:'. BASE_URL);
