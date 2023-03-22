@@ -80,21 +80,19 @@ switch ($url) {
     case "web-management/khach-hang":
         require_once "./admin/business/account.php";
         indexAccount();
-            break;
-    case "web-management/khach-hang/xoa":
-        require_once "./admin/business/account.php";
-        DeleteAccount();
-            break;
+            break;   
     case "web-management/khach-hang/cap-nhat-account":
         require_once "./admin/business/account.php";
-        // getAccount();
         updateAccount();
-            break;
+        break;
     case "web-management/khach-hang/get-account":
         require_once "./admin/business/account.php";
         getAccount();
         break;
-
+    case "web-management/khach-hang/xoa":
+        require_once "./admin/business/account.php";
+        DeleteAccount();
+        break;
     case "web-management/gui-mail":
         require_once "./admin/business/contactUser.php";
         sendMail();
