@@ -65,6 +65,7 @@ switch ($url) {
         require_once "./client/business/taikhoan.php";
         form_quenmk();
         break;
+    
     case 'thoat':
         session_unset();
         header('Location:'. BASE_URL);
@@ -76,6 +77,24 @@ switch ($url) {
         require_once "./admin/business/contactUser.php";
         mailForm();
             break;
+    case "web-management/khach-hang":
+        require_once "./admin/business/account.php";
+        indexAccount();
+            break;
+    case "web-management/khach-hang/xoa":
+        require_once "./admin/business/account.php";
+        DeleteAccount();
+            break;
+    case "web-management/khach-hang/cap-nhat-account":
+        require_once "./admin/business/account.php";
+        // getAccount();
+        updateAccount();
+            break;
+    case "web-management/khach-hang/get-account":
+        require_once "./admin/business/account.php";
+        getAccount();
+        break;
+
     case "web-management/gui-mail":
         require_once "./admin/business/contactUser.php";
         sendMail();
@@ -84,7 +103,7 @@ switch ($url) {
         require_once "./admin/business/dashboard.php";
         dashboardIndex();
         break;
-
+    // danh muc
     case "web-management/danh-muc":
         require_once "./admin/business/category.php";
         cateIndex();
@@ -100,10 +119,10 @@ switch ($url) {
         addCate();
         break;
 
-    case "web-management/danh-muc/get-danh-muc":
+  case "web-management/danh-muc/get-danh-muc":
         require_once "./admin/business/category.php";
         getCate();
-        break;
+        break;  
 
     case "web-management/danh-muc/luu-them-danh-muc":
         require_once './admin/business/category.php';

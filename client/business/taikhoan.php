@@ -11,6 +11,10 @@
     function form_quenmk(){
         clientRender('account/quenmk.php');
     }
+    function form_listtk(){
+        adminRender('khachhang/index.php');
+        
+    }
     function loadall_taikhoan(){
         $sql="select * from taikhoan order by id desc";
         $listtaikhoan=pdo_query($sql);
@@ -88,4 +92,8 @@ function dangky(){
     }
     
   }
+  function list_taikhoan(){
+    $listtaikhoan = loadall_taikhoan();
+    
+}
 ?>

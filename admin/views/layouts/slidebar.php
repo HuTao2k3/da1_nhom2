@@ -29,7 +29,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="<?= ADMIN_URL . "khach-hang"?>">
 				<i class='bx bxs-group'></i>
 				<span class="text">Account</span>
 			</a>
