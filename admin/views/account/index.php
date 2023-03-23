@@ -1,7 +1,7 @@
 <div class="table-data">
     <div class="order">
         <div class="head">
-            <h3>Recent Orders</h3>
+            <h3>Customer Account</h3>
             <form action="" method="get">
 			<div class="form-input">
 				<input name="keyword" value="<?= $keyword ?> "type="search" class="outline-none p-1 rounded bg-[#eeeeee] border-2" placeholder="Search...">

@@ -26,7 +26,12 @@
 {
      $id = $_POST['id'];
      $name = $_POST['user'];
-     $sql = "UPDATE `taikhoan` SET `user`='$name' WHERE id =$id";
+     $pass = $_POST['pass'];
+     $email = $_POST['email'];
+     $address = $_POST['address'];
+     $phone = $_POST['tel'];
+     $role = $_POST['role'];
+     $sql = "UPDATE `taikhoan` SET `user`='$name',`pass`='$pass',`email`='$email',`address`='$address',`tel`='$phone',`role`='$role' WHERE id =$id";
      pdo_execute($sql);
      header("location:" . ADMIN_URL . 'khach-hang');
     }
