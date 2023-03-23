@@ -77,6 +77,7 @@ switch ($url) {
         require_once "./admin/business/contactUser.php";
         mailForm();
             break;
+    //Account
     case "web-management/khach-hang":
         require_once "./admin/business/account.php";
         indexAccount();
@@ -100,6 +101,14 @@ switch ($url) {
     case "web-management":
         require_once "./admin/business/dashboard.php";
         dashboardIndex();
+        break;
+    case "web-management/khach-hang/luu-them-account":
+        require_once './admin/business/account.php';
+        addSaveAccount();
+        break;
+    case "web-management/khach-hang/them-account":
+        require_once './admin/business/account.php';
+        addAccount();
         break;
     // danh muc
     case "web-management/danh-muc":

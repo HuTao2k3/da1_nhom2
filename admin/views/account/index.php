@@ -9,7 +9,7 @@
                 text-[20px] p-[6px] rounded bx bx-search"></i></button>
 			</div>
 		</form>
-        <a href="<?= ADMIN_URL . 'khach-hang/luu-account'?>"><i class='text-[20px] bx bx-add-to-queue'></i></a>
+        <a href="<?= ADMIN_URL . 'khach-hang/them-account'?>"><i class='text-[20px] bx bx-add-to-queue'></i></a>
         </div>
         <table>
             <thead>

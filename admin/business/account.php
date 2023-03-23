@@ -35,4 +35,20 @@
      pdo_execute($sql);
      header("location:" . ADMIN_URL . 'khach-hang');
     }
+    function addSaveAccount()
+ {
+    $name = $_POST['user'];
+     $pass = $_POST['pass'];
+     $email = $_POST['email'];
+     $address = $_POST['address'];
+     $phone = $_POST['tel'];
+     $role = $_POST['role'];
+    $sql = "INSERT INTO `taikhoan`(`user`,`pass`,`email`,`address`,`tel`,`role`) VALUES ('$name','$pass','$email','$address','$phone','$role') ";
+    pdo_query($sql);
+    header('location:'. ADMIN_URL . 'khach-hang');
+ }
+ function addAccount()
+ {
+   adminRender('account/add.php',[]);
+ }
 ?>
