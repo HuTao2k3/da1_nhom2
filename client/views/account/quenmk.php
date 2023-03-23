@@ -27,12 +27,9 @@
 
                 <h2 class="text-red-500">
                 <?php
-                
-                
                     if(isset($thongbao)&&($thongbao!="")){
                         echo $thongbao;
                     }
-                
                 ?>
                 </h2>
             </div>

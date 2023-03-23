@@ -5,7 +5,7 @@
 	</a>
 	<ul class="side-menu top">
 		<li class="">
-			<a href="#">
+			<a href="<?= ADMIN_URL ?>">
 				<i class='bx bxs-dashboard'></i>
 				<span class="text">Dashboard</span>
 			</a>

@@ -45,7 +45,7 @@ function dangky(){
       $user=$_POST['user'];
       $pass=$_POST['pass'];
       insert_taikhoan($email,$user,$pass);
-      $thongbao="Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận hoặc đặt hàng!";
+      $thongbao = "Đã đăng ký thành công. Vui lòng đăng nhập để thực hiện chức năng bình luận hoặc đặt hàng!";
       header('location:' . BASE_URL . 'form-dangnhap');
   }
 
@@ -80,20 +80,20 @@ function dangky(){
   }
   }
   function quen_mk(){
-    if(isset($_POST['guiemail'])&&($_POST['guiemail'])){
-        $email=$_POST['email'];
-
-        $checkemail=checkemail($email);
+    if(isset($_POST['guiemail']) && ($_POST['guiemail'])){
+        $email = $_POST['email'];
+        $checkemail = checkemail($email);
         if(is_array($checkemail)){
-            $thongbao="Mat khau cua ban la: ".$checkemail['pass'];
+            $thongbao = "Mat khau cua ban la: ". $checkemail['pass'];
+            // dd($thongbao);
         }else{
-            $thongbao="Email nay khong ton tai";
+            $thongbao = "Email nay khong ton tai";
+            // dd($thongbao);
         }
     }
     
   }
   function list_taikhoan(){
     $listtaikhoan = loadall_taikhoan();
-    
 }
 ?>
