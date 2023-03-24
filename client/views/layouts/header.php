@@ -46,9 +46,22 @@
               ?>
               <li><a href="#">Đăng Nhập Admin</a></li>
               <?php } ?>
-                   <li>
+            <li>
           <a class="inline px-3 py-1 ml-2 border-black border  bg-white text-black rounded hover:bg-black hover:text-white"  href="<?= BASE_URL . 'thoat'?>">Logout</a>
-              </li>
+           </li>
+ 
+          <button class="header-action-btn">
+              <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+              <p class="header-action-label">Cart</p>
+              <div class="btn-badge green" aria-hidden="true">3</div>
+            </button>
+    
+            <button class="header-action-btn">
+              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+              <p class="header-action-label">Wishlisht</p>
+              <div class="btn-badge" aria-hidden="true">2</div>
+          </button>
+
       <li>
     </div>
       <?php    
@@ -69,21 +82,6 @@
           <p class="header-action-label">Search</p>
         </button>
 
-        <button class="header-action-btn">
-          <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label">Cart</p>
-
-          <div class="btn-badge green" aria-hidden="true">3</div>
-        </button>
-
-        <button class="header-action-btn">
-          <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-
-          <p class="header-action-label">Wishlisht</p>
-
-          <div class="btn-badge" aria-hidden="true">2</div>
-        </button>
 
       </div>
 
