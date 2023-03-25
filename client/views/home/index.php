@@ -157,44 +157,62 @@
 
     </ul>
 
-  <ul class="product-list">
-    <?php foreach ($products as $pro):?>
-      <li>
-        <div class="product-card">
-          <figure class="card-banner">
-            <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id']?>">
-              <img src="<?= PUBLIC_URL . $pro['image']?>" alt="Casmart Smart Glass" loading="lazy" width="800" height="1034" class="w-100">
-            </a>
-            <div class="card-actions">
-            <button class="card-action-btn" aria-label="Quick view">
-              <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id']?>">
-              <ion-icon name="eye-outline"></ion-icon>
-            </a>
-          </button>
-              <button class="card-action-btn cart-btn">
-                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                <p>Add to Cart</p>
-              </button>
-              <button class="card-action-btn" aria-label="Add to Whishlist">
-                <ion-icon name="heart-outline"></ion-icon>
-              </button>
-            </div>
-          </figure>
-          <div class="card-content">
-            <h3 class="h4 card-title short">
-              <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id']?>"><?= $pro['name']?></a>
-            </h3>
-            <div class="card-price">
-              <data value="25.00"><?= number_format($pro['price'])?>đ</data>
-              <data value="39.00"><?= number_format($pro['discount'])?>đ</data>
+    <ul class="product-list">
+      <?php foreach ($products as $pro) : ?>
+        <li>
+          <div class="product-card">
+            <figure class="card-banner">
+              <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id'] ?>">
+                <img src="<?= PUBLIC_URL . $pro['image'] ?>" alt="Casmart Smart Glass" loading="lazy" width="800" height="1034" class="w-100">
+              </a>
+              <div class="card-actions">
+                <!-- =======Nút xem chi tiết======== -->
+                <button class="card-action-btn" aria-label="Quick view">
+                  <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id'] ?>">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </a>
+                </button>
+                <!-- =======Nút giỏ hàng======== -->
+                <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
+                  <button class="card-action-btn cart-btn">
+                    <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
+                    <p>Add to Cart</p>
+                  </button>
+                <?php else : ?>
+                  <button class="card-action-btn cart-btn">
+                    <a href="<?= BASE_URL . 'form-dangnhap' ?>">Please login</a>
+                  </button>
+                <?php endif ?>
+                <!-- =======Nút yêu thích======== -->
+
+                <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
+                  <a class="card-action-btn" aria-label="Add to Whishlist" href="<?= BASE_URL . 'yeu-thich?id=' . $pro['id'] ?>">
+                  <button>
+                    <ion-icon name="heart-outline"></ion-icon>
+                  </button>
+                  </a>
+                <?php else : ?>
+                  <button class="card-action-btn pointer-events-none bg-gray-500 po" aria-label="Add to Whishlist">
+                    <a href="<?= BASE_URL . 'yeu-thich?id=' . $pro['id'] ?>"><ion-icon name="heart-outline"></ion-icon></a>
+                  </button>
+                <?php endif ?>
+              </div>
+            </figure>
+            <div class="card-content">
+              <h3 class="h4 card-title short">
+                <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $pro['id'] ?>"><?= $pro['name'] ?></a>
+              </h3>
+              <div class="card-price">
+                <data value="25.00"><?= number_format($pro['price']) ?>đ</data>
+                <data value="39.00"><?= number_format($pro['discount']) ?>đ</data>
+              </div>
             </div>
           </div>
-        </div>
-      </li>
-      <?php endforeach?>
+        </li>
+      <?php endforeach ?>
     </ul>
 
-    <a href="<?= BASE_URL . 'san-pham'?>"><button class="btn btn-outline">View All Products</button></a>
+    <a href="<?= BASE_URL . 'san-pham' ?>"><button class="btn btn-outline">View All Products</button></a>
   </div>
 </section>
 

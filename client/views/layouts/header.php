@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Shop</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?= USER_ASSET?>/css/style.css">
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
@@ -59,7 +59,7 @@
             <button class="header-action-btn">
               <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
               <p class="header-action-label">Wishlisht</p>
-              <div class="btn-badge" aria-hidden="true">2</div>
+              <div class="btn-badge" aria-hidden="true"><?= count(getFvrProduct())?></div>
           </button>
 
       <li>
