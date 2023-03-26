@@ -69,3 +69,19 @@ function filter()
   $listCategory = getAllCate();
   clientRender('product/fillter.php', compact('listProduct', 'listCategory'));
 }
+function favourite() {
+  $id = $_GET['id'];
+  $userId = $_SESSION['user']['id'];
+
+  //kiểm tra sản phẩm đã được thêm vào yêu thích hay chưa 
+  $sql = "SELECT * FROM favorite WHERE `user_id`=$userId AND `product_id`=$id";
+  $favourite = pdo_query($sql);
+
+  if(!$favourite){
+  $time = date("Y-m-d h:i:s");
+  $sql = "INSERT INTO favorite (`user_id`, `product_id`, `created_at`) VALUES ($userId,$id, '$time')";
+  // dd($sql);
+  pdo_execute($sql);
+  }
+  header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
