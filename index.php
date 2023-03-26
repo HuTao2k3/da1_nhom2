@@ -38,6 +38,15 @@ switch ($url) {
         favourite();
         break;
 
+    case 'san-pham-da-yeu-thich':
+        require_once './client/business/home.php';
+        showProductFvr();
+        break;
+    
+    case 'xoa-san-pham-yeu-thich':
+        require_once './client/business/home.php';
+        deleteFavorite();
+        break;
 
     case 'form-dangky':
         require_once "./client/business/taikhoan.php";

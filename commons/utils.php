@@ -39,8 +39,8 @@ function getFvrProduct() {
     // dd($userId);
     return $fvrProduct;
 }
-function checkAuth($role = []){
-    
+function checkAuth($role = [])
+{
     if(!isset($_SESSION['user']) || $_SESSION['user'] == null || !in_array($_SESSION['user']['role'], $role)){
         header('location: ' . BASE_URL . 'dang-nhap');
         die;

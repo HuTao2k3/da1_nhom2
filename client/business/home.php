@@ -23,4 +23,17 @@ function favourite() {
     }
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+function showProductFvr(){
+    $sql = "SELECT yt.*,pr.name,pr.price,pr.status,pr.image FROM favorite yt JOIN products pr ON pr.id = yt.product_id JOIN taikhoan us on yt.user_id = us.id WHERE 1 ORDER BY id ASC";
+    $listFvr = pdo_query($sql);
+    // dd($listFvr);
+    clientRender('./product/favourite.php',compact('listFvr'));
+}
+function deleteFavorite()
+{
+    $id = $_GET['id'];
+    $sql = "DELETE FROM `favorite` where id = $id";
+    pdo_query_one($sql);
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
+}
 ?>

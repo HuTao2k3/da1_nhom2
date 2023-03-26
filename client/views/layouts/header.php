@@ -57,7 +57,7 @@
             </button>
     
             <button class="header-action-btn">
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
+            <a href="<?= BASE_URL . 'san-pham-da-yeu-thich'?>"><ion-icon name="heart-outline" aria-hidden="true"></ion-icon></a>
               <p class="header-action-label">Wishlisht</p>
               <div class="btn-badge" aria-hidden="true"><?= count(getFvrProduct())?></div>
           </button>
