@@ -38,6 +38,7 @@ switch ($url) {
         favourite();
         break;
 
+
     case 'form-dangky':
         require_once "./client/business/taikhoan.php";
         form_dangky();
@@ -86,106 +87,127 @@ switch ($url) {
 
         // =========admin==============
     case "web-management/lien-he":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/contactUser.php";
         mailForm();
         break;
         //Account
     case "web-management/khach-hang":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/account.php";
         indexAccount();
         break;
 
     case "web-management/khach-hang/cap-nhat-account":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/account.php";
         updateAccount();
         break;
 
     case "web-management/khach-hang/get-account":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/account.php";
         getAccount();
         break;
 
     case "web-management/khach-hang/xoa":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/account.php";
         DeleteAccount();
         break;
 
     case "web-management/gui-mail":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/contactUser.php";
         sendMail();
         break;
 
     case "web-management":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/dashboard.php";
         dashboardIndex();
         break;
 
     case "web-management/khach-hang/luu-them-account":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/account.php';
         addSaveAccount();
         break;
 
     case "web-management/khach-hang/them-account":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/account.php';
         addAccount();
         break;
         // danh muc
     case "web-management/danh-muc":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/category.php";
         cateIndex();
         break;
 
     case "web-management/danh-muc/xoa":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/category.php';
         cateDelete();
         break;
 
     case "web-management/danh-muc/them-danh-muc":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/category.php';
         addCate();
         break;
 
     case "web-management/danh-muc/get-danh-muc":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/category.php";
         getCate();
         break;
 
     case "web-management/danh-muc/luu-them-danh-muc":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/category.php';
         addSave();
         break;
 
     case "web-management/danh-muc/cap-nhat-danh-muc":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/category.php';
         updateCate();
         break;
         // ======= admin product ============
     case "web-management/san-pham":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/product.php";
         proIndex();
         break;
 
     case "web-management/san-pham/xoa":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/product.php';
         proDelete();
         break;
 
     case "web-management/san-pham/them-san-pham":
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/product.php';
         addPro();
         break;
 
     case "web-management/san-pham/luu-them-san-pham";
+        checkAuth([ADMIN_ROLE]);
         require_once './admin/business/product.php';
         addSavePro();
         break;
 
     case "web-management/san-pham/get-san-pham":
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/product.php";
         loadOneProduct();
         break;
 
     case "web-management/san-pham/luu-cap-nhat-san-pham";
+        checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/product.php";
         updatePro();
         break;

@@ -4,6 +4,9 @@ const ADMIN_URL = BASE_URL . 'web-management/';
 const ADMIN_ASSET = BASE_URL . 'public/admin-assets/';
 const PUBLIC_URL = BASE_URL . 'public/';
 const USER_ASSET = BASE_URL . 'public/user-assets/';
+
+const ADMIN_ROLE = 1;
+const USER_ROLE = 0;
 //dùng để var_dump;
 function dd(){
     $data = func_get_args();
@@ -35,5 +38,12 @@ function getFvrProduct() {
     $fvrProduct = pdo_query($sql);
     // dd($userId);
     return $fvrProduct;
+}
+function checkAuth($role = []){
+    
+    if(!isset($_SESSION['user']) || $_SESSION['user'] == null || !in_array($_SESSION['user']['role'], $role)){
+        header('location: ' . BASE_URL . 'dang-nhap');
+        die;
+    }
 }
 ?>

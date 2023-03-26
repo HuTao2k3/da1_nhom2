@@ -30,9 +30,17 @@
                 <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
                 <p>Add to Cart</p>
               </button>
-              <button class="card-action-btn" aria-label="Add to Whishlist">
-                <ion-icon name="heart-outline"></ion-icon>
-              </button>
+
+              <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
+                <button class="card-action-btn" aria-label="Add to Whishlist">
+                  <a href="<?= BASE_URL . 'yeu-thich?id=' . $pro['id'] ?>"><ion-icon name="heart-outline"></ion-icon></a>
+                </button>
+              <?php else : ?>
+                <button class="card-action-btn pointer-events-none bg-gray-500" aria-label="Add to Whishlist">
+                  <a href="<?= BASE_URL . 'yeu-thich?id=' . $pro['id'] ?>"><ion-icon name="heart-outline"></ion-icon></a>
+                </button>
+              <?php endif ?>
+
             </div>
           </figure>
           <div class="card-content">
