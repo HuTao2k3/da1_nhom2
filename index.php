@@ -87,6 +87,11 @@ switch ($url) {
         require_once "./client/business/taikhoan.php";
         form_quenmk();
         break;
+        
+    case 'add-to-cart':
+        require_once "./client/business/cart.php";
+        add2Cart();
+        break;
 
     case 'thoat':
         session_unset();

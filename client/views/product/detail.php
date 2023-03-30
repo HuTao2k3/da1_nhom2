@@ -39,10 +39,12 @@
 <div class="desc border-[1px] border-solid px-3 py-5 my-4">
     <p class="text-center min-h-full"><?= $pro['desc'] ?></p>
 </div>
+
+<!-- sản phẩm cùng danh mục -->
 <?php if(empty($listgeneral)):?>
    <span></span>
     <?php else : ?>
-        <h1 class="font-bold text-black text-[25px] py-1 px-6">Same Category</h1>
+        <h1 class="font-bold text-black text-[25px] py- px-6">Same Category</h1>
     <?php endif?>
 <div class="">
 <ul class="grid grid-cols-5 gap-7 mx-auto py-5 px-6">

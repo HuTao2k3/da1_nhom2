@@ -26,10 +26,16 @@
                   <ion-icon name="eye-outline"></ion-icon>
                 </a>
               </button>
-              <button class="card-action-btn cart-btn">
-                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                <p>Add to Cart</p>
-              </button>
+              
+              <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
+                <a class="card-action-btn cart-btn" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>">
+                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>Add to Cart
+                </a>
+              <?php else : ?>
+                <button class="card-action-btn cart-btn">
+                  <a href="<?= BASE_URL . 'form-dangnhap' ?>">Please login</a>
+                </button>
+              <?php endif ?>
 
               <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
                 <button class="card-action-btn" aria-label="Add to Whishlist">
@@ -37,7 +43,7 @@
                 </button>
               <?php else : ?>
                 <button class="card-action-btn pointer-events-none bg-gray-500" aria-label="Add to Whishlist">
-                  <a href="<?= BASE_URL . 'yeu-thich?id=' . $pro['id'] ?>"><ion-icon name="heart-outline"></ion-icon></a>
+                  <a href=""><ion-icon name="heart-outline"></ion-icon></a>
                 </button>
               <?php endif ?>
 

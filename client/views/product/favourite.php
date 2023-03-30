@@ -1,7 +1,7 @@
   <div class="p-5 h-screen bg-gray-100 rounded">
     <h1 class="text-xl mb-2">Product liked</h1>
 
-    <div class="overflow-auto rounded-lg shadow hidden md:block">
+    <div class=" rounded-lg shadow md:block">
       <table class="w-full">
         <thead class="bg-gray-50 border-b-2 border-gray-200">
         <tr>
@@ -22,11 +22,11 @@
           </td>
 
           <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-            <a href=""><?= $item['name']?></a>
+            <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $item['product_id']?>"><?= $item['name']?></a>
           </td>
 
           <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-            <img class="w-16 h-16" src="<?= PUBLIC_URL . $item['image']?>" alt="">
+            <a href="<?= BASE_URL . 'chi-tiet-san-pham?id=' . $item['product_id']?>"><img class="w-16 h-16" src="<?= PUBLIC_URL . $item['image']?>" alt=""></a>
           </td>
 
           <td class="p-3 text-sm text-gray-700 whitespace-nowrap">

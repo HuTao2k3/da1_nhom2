@@ -29,10 +29,9 @@
               </button>
               <!-- =======Nút giỏ hàng======== -->
               <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
-                <button class="card-action-btn cart-btn">
-                  <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>
-                  <p>Add to Cart</p>
-                </button>
+                <a class="card-action-btn cart-btn" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>">
+                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>Add to Cart
+                </a>
               <?php else : ?>
                 <button class="card-action-btn cart-btn">
                   <a href="<?= BASE_URL . 'form-dangnhap' ?>">Please login</a>
