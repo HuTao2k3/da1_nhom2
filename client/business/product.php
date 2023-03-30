@@ -48,8 +48,10 @@ function detailProduct()
   $id = $_GET['id'];
   $sql = "SELECT * FROM products where id=$id";
   $pro = pdo_query_one($sql);
-  // dd($pro);
-  clientRender('product/detail.php', compact('pro'));
+  $id_category = $pro['id_category'];
+  $sqlcm = "SELECT * FROM products WHERE id_category = '$id_category' AND id != '$id' limit 5";
+  $listgeneral = pdo_query($sqlcm);
+  clientRender('product/detail.php', compact('pro','listgeneral'));
 }
 function searchByCategory($id)
 {

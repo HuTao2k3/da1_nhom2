@@ -57,7 +57,6 @@ function dangky(){
       $pass=$_POST['pass'];
       $checkuser=checkuser($user,$pass);
       if (is_array($checkuser)) {
-          
           $_SESSION['user']=$checkuser;
           // $thongbao="Bạn đã đăng nhập thành công!";
           header('Location:'.BASE_URL);
