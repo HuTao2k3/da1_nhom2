@@ -100,4 +100,12 @@ function pdo_query_value($sql){
         unset($conn);
     }
 }
+function insertDataAndGetId($sql)
+{
+    $connect = pdo_get_connection();
+    $stmt = $connect->prepare($sql);
+    $stmt->execute();
+    $id = $connect->lastInsertId();
+    return $id;
+}
 ?> 

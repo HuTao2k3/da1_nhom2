@@ -1,8 +1,9 @@
 <?php
+//thêm sản phẩm vào giỏ hàng
 function add2Cart(){
     $pId = $_GET['id'];
     // lấy thông tin sản phẩm
-    $getProductByIdQuery = "SELECT * FROM products where id = $pId";
+    $getProductByIdQuery = "SELECT * FROM `products` WHERE id = $pId";
     $product = pdo_query_one($getProductByIdQuery);
     if(!$product){
         header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -28,5 +29,39 @@ function add2Cart(){
     $_SESSION['cart'] = $cart;
     header('Location: ' . $_SERVER['HTTP_REFERER']);
     die;
+}
+function checkOut(){
+    if(!isset($_SESSION['cart']) || empty($_SESSION['cart'])){
+        header('location:' . BASE_URL );
+    }
+    $cart = $_SESSION['cart'];
+    clientRender('cart/cart.php',compact('cart'));
+}
+function payCart(){
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $address = $_POST['address'];
+    $note = $_POST['note'];
+    //insert dữ liệu tạo hóa đơn
+    $createInvoiceQuery = "INSERT INTO `invoices` (customer_name,customer_phone_number,customer_email,customer_address,note) VALUES ('$name','$email',$phone,'$address','$note')";
+    $invoiceId = insertDataAndGetId($createInvoiceQuery);
+    //chạy vòng lặp qua các phần tử của giỏ hàng , sau đó insert dữ liệu vào bảng invoices_detail 
+    foreach($_SESSION['cart'] as $item){
+        $productId = $item['id'];
+        $price = $item['price'];
+        $quantity = $item['quantity'];
+        $totalPrice += $price*$quantity;
+        $inserInvoiceDetailQuery = "INSERT INTO `invoices_detail` (invoice_id,product_id,quantity,unti_price) VALUES ($invoiceId,$productId, $price,$quantity)"; 
+        pdo_execute($inserInvoiceDetailQuery);
+    }
+    //Cập nhật tổng tiền hóa đơn
+    $updateTotalPrice = "UPDATE `invoices` SET total_price = $totalPrice WHERE id=$invoiceId";
+    pdo_execute($updateTotalPrice);
+    unset($_SESSION['cart']);
+    header('location:' . BASE_URL);
+}
+function formCheckOut(){
+    clientRender('cart/checkout.php');
 }
 ?>

@@ -92,7 +92,22 @@ switch ($url) {
         require_once "./client/business/cart.php";
         add2Cart();
         break;
+        
+    case 'product-in-cart':
+        require_once './client/business/cart.php';
+        checkOut();
+        break;
+        
+    case 'form-pay-cart': 
+        require_once './client/business/cart.php';
+        formCheckOut();
+        break;
 
+    case 'pay-cart':
+        require_once "./client/business/cart.php";
+        payCart();
+        break;
+        
     case 'thoat':
         session_unset();
         header('Location:' . BASE_URL);

@@ -39,7 +39,7 @@
         pdo_execute($sql);
     }
     //log in,sign in
-function dangky(){
+    function dangky(){
     if (isset($_POST['dangky'])&&($_POST['dangky'])) {
       $email=$_POST['email'];
       $user=$_POST['user'];
@@ -95,4 +95,3 @@ function dangky(){
   function list_taikhoan(){
     $listtaikhoan = loadall_taikhoan();
 }
-?>
