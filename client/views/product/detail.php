@@ -39,6 +39,7 @@
 <div class="desc border-[1px] border-solid px-3 py-5 my-4">
     <p class="text-center min-h-full"><?= $pro['desc'] ?></p>
 </div>
+<!-- from binh luan -->
 
 <!-- sản phẩm cùng danh mục -->
 <?php if(empty($listgeneral)):?>

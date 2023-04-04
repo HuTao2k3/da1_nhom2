@@ -23,7 +23,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="#">
+			<a href="<?= ADMIN_URL . "binh-luan"?>">
 				<i class='bx bxs-message-dots'></i>
 				<span class="text">Comment</span>
 			</a>

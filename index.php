@@ -150,7 +150,26 @@ switch ($url) {
         require_once "./admin/business/contactUser.php";
         sendMail();
         break;
-
+    case "web-management/binh-luan":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/comment.php";
+        listcomment();
+        break;
+    case "web-management/binh-luan/xoa":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/comment.php";
+        Deletebinhluan();
+        break;
+    case "web-management/binh-luan/update":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/comment.php";
+        updatebinhluan();
+        break;
+    case "web-management/binh-luan/getbinhluan":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/comment.php";
+        getbinhluan();
+        break;
     case "web-management":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/dashboard.php";
