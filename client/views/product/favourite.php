@@ -30,16 +30,20 @@
           </td>
 
           <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-          <?php echo $item['status'] == 1 ? '<span class="p-1.5 text-xs font-medium uppercase tracking-wider text-red-800 bg-red-200 rounded-lg bg-opacity-50"><i class="bx bxs-lock-alt"></i> Out of stock</span>' : '<span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"><i class="bx bxs-circle"></i> Stocking</span>' ?>
+          <?php echo $item['status'] == 1 ? '<span class="p-1.5 text-xs font-medium uppercase tracking-wider text-orange-700 bg-orange-200 rounded-lg bg-opacity-50"><i class="bx bxs-lock-alt"></i> Out of stock</span>' : '<span class="p-1.5 text-xs font-medium uppercase tracking-wider text-green-800 bg-green-200 rounded-lg bg-opacity-50"><i class="bx bxs-circle"></i> Stocking</span>' ?>
           
           </td>
 
           <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
-            <?= $item['price']?>
+            <?= number_format($item['price'])?>đ
         </td>
           <td class="flex items-end">
-          <a href="<?= BASE_URL . 'xoa-san-pham-yeu-thich?id=' . $item['id'] ?>"><i class='bg-red-200 p-[2px] text-red-800 text-[30px] rounded mt-7 bx bx-x-circle'></i></a>
-          <a href="#"><i class=' ml-2 text-black bg-gray-200 p-[2px] text-[30px] rounded mt-7 bx bx-cart'></i></a>
+          <a href="<?= BASE_URL . 'xoa-san-pham-yeu-thich?id=' . $item['id'] ?>"><i class='bg-red-200 p-[2px] text-red-800 text-[31px] rounded mt-7 bx bx-x-circle'></i></a>
+          <?php if($item['status'] == 1) : ?>
+          <a href=""><i class=' ml-2 pointer-events-none text-white bg-gray-500 p-[2px] hover:text-black hover:bg-white border-gray-500 border-solid border-[1px] text-[30px] rounded mt-7 bx bx-cart'></i></a>
+          <?php else : ?>
+            <a href="<?= BASE_URL . 'add-to-cart?id=' . $item['product_id'] ?>"><i class=' ml-2 text-white bg-black p-[2px] hover:text-black hover:bg-white border-black border-solid border-[1px] text-[30px] rounded mt-7 bx bx-cart'></i></a>
+          <?php endif?>
           </td>
         </tr>
         <?php endforeach?>

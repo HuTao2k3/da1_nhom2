@@ -71,7 +71,7 @@ function dangky()
         if (empty($_POST['pass-comfirm'])) {
             $errors['pass-comfirm'] = 'Password-comfirm không được để trống';
         } elseif ($_POST['pass-comfirm'] != $_POST['pass']) {
-            $errors['pass-comfirm'] = 'Password không đúng vui lòng nhập lại';
+            $errors['pass-comfirm'] = 'Password không khớp';
         } else {
             $pass = $_POST['pass-comfirm'];
         }
@@ -102,11 +102,8 @@ function dangnhap()
         } else {
             $_SESSION['pass'] = $checkuser;
         }
-
         // ------------------------------------------------- //
-
         if (!is_array($checkuser && empty($errors))) {
-
             // Validate uername;
             if (empty($_POST['user'])) {
                 $errors['user'] = 'User không được để trống';
@@ -114,11 +111,12 @@ function dangnhap()
                 $errors['user'] = 'User phải lớn hơn 5 ký tự';
             } else {
                 $_SESSION['user'] = $checkuser;
+                header('location:' . BASE_URL );
             }
-        } elseif (is_array($checkuser)) {
+        } else if (is_array($checkuser)) {
         } else {
             $_SESSION['user'] = $checkuser;
-            header('Location:' . BASE_URL);
+            header('location:' . BASE_URL );
         }
     }
     clientRender('account/dangnhap.php', compact('errors'));

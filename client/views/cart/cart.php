@@ -1,10 +1,11 @@
-<h1 class="text-center py-10 text-[25px] font-bold">Product added to cart</h1>
-<div class="mx-auto max-w-7xl">
+<h1 class="text-center pt-5 text-[25px] font-bold">Product add to cart</h1>
+<div class="mx-auto max-w-full ">
+<div class="my-12 mx-10 bg-white rounded shadow-xl p-10 min-h-[520px]">
     <table>
         <thead class="border-b-[1px] border-solid border-black">
-            <th class="w-[10%]">Product</th>
-            <th class="w-[5%]">Quantity</th>
-            <th class="w-[5%] pl-7">Category</th>
+            <th class="w-[30%] short">Product</th>
+            <th class="w-[5%] pr-10">Quantity</th>
+            <th class="w-[5%] ">Category</th>
             <th class="w-[20%]">Price</th>
             <th class="w-[20%]">Remove</th>
         </thead>
@@ -32,14 +33,13 @@
             </tr>
         </tbody>
     </table>
-
-    <div class="flex justify-between py-14">
-    <span class="">Total : <?= number_format($totalPrice)?>đ</span>
-    <a href="<?= BASE_URL . 'form-pay-cart'?>">Pay</a> 
+ 
+    <div class="flex justify-between pt-3 mx-10">
+    <span class="font-bold text-red-500">Total : <?= number_format($totalPrice)?>đ</span>
+    <a class="px-7 py-1 text-white rounded bg-blue-500" href="<?= BASE_URL . 'form-pay-cart'?>">Pay</a> 
     </div>
-
+ 
 </div>
-
 
 <!-- <div class=" mt-8">
     <h1>Form Pay</h1>

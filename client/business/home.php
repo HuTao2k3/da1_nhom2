@@ -10,7 +10,6 @@ function home($number){
 function favourite() {
     $id = $_GET['id'];
     $userId = $_SESSION['user']['id'];
- 
     //kiểm tra sản phẩm đã được thêm vào yêu thích hay chưa 
     $sql = "SELECT * FROM favorite WHERE `user_id`=$userId AND `product_id`=$id";
     $favourite = pdo_query($sql);

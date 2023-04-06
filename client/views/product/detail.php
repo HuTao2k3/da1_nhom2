@@ -27,10 +27,15 @@
                         <?php endforeach ?>
                     </select>
                 </div>
-                
-                <input type="number" value="1" placeholder="Quantity" class="inline w-[100px] border-black border-solid rounded border-[1px] my-5 px-1 py-2 text-[17px]" min="1" max="10">
-
-                <?php echo $pro['status'] == 1 ? '<button class="inline pointer-events-none border-gray-500 bg-gray-500 text-white border-[1px] px-1 py-2 text-[17px] rounded-md my-5 hover:bg-white hover:text-black border-solid" type="submit"><i class="bx bx-cart-alt"></i>Add to cart</button>' : '<button class="inline border-black bg-black text-white border-[1px] px-1 py-2 text-[17px] rounded-md my-5 hover:bg-white hover:text-black border-solid" type="submit"><i class="bx bx-cart-alt"></i>Add to cart</button>'?>
+                <div class="mt-7">
+                <?php if($pro['status'] == 1) : ?>
+                  <button class="inline pointer-events-none border-gray-500 bg-gray-500 text-white border-[1px] px-2 py-3 text-[17px] rounded-md  hover:bg-white hover:text-black border-solid" type="submit"><i class="bx bx-cart-alt"></i>Add to cart</button>
+                <?php else : ?>
+                  <a class="inline border-black bg-black text-white border-[1px] px-2 py-3 text-[17px] rounded-md my-5 hover:bg-white hover:text-black border-solid" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>"><i class="bx bx-cart-alt"></i> Add to cart</a>
+              <?php endif?>
+              </div>
+             
+               
             </form>
         </div>
     </div>

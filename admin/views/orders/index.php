@@ -38,27 +38,27 @@
                     <td class="w-[10%] "><?= $inv['total_price']?></td>
 
                     <?php if($inv['status'] == 1):?>
-                    <td class="w-[20%] pr-2 "><p class="w-full">Chờ xác nhận</p></td>
+                    <td class="w-[20%] pr-2 "><p class="py-5">Chờ xác nhận</p></td>
                     <?php endif?>
                     
                     <?php if($inv['status'] == 2):?>
-                    <td class="w-[20%] pr-2"><p>Đã xác nhận đơn hàng</p></td>
+                    <td class="w-[20%] pr-2"><p class="py-5">Đã xác nhận đơn hàng</p></td>
                     <?php endif?>
 
                     <?php if($inv['status'] == 3):?>
-                    <td class="w-[20%] pr-2"><p>Đang giao</p></td>
+                    <td class="w-[20%] pr-2"><p class="py-5">Đang giao</p></td>
                     <?php endif?>
 
                     <?php if($inv['status'] == 4):?>
-                    <td class="w-[20%] pr-2"><p>Giao hàng thành công</p></td>
+                    <td class="w-[20%] pr-2"><p class="py-5">Giao hàng thành công</p></td>
                     <?php endif?>
 
                     <?php if($inv['status'] == 5):?>
-                    <td class="w-[20%] pr-2"><p>Giao hàng thất bại</p></td>
+                    <td class="w-[20%] pr-2"><p class="py-5">Giao hàng thất bại</p></td>
                     <?php endif?>
 
                     <?php if($inv['status'] == 6):?>
-                    <td class="w-[20%] pr-2"><p>Hủy đơn</p></td>
+                    <td class="w-[20%] pr-2"><p class="py-5">Hủy đơn</p></td>
                     <?php endif?>
 
                     <td class="pl-14"><button><a href="<?= ADMIN_URL . 'chi-tiet-don-hang?id=' . $inv['id'] ?>"><i class='bx bxs-cog text-[25px]'></i></a></button></td>

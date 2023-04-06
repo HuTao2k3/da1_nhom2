@@ -173,15 +173,16 @@
                   </a>
                 </button>
                 <!-- =======Nút giỏ hàng======== -->
-                <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>
-                  <a class="card-action-btn cart-btn" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>">
+               <?php if($pro['status'] == 1) : ?>
+                 <a class="card-action-btn cart-btn bg-gray-500 pointer-events-none" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>">
+                <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>Out of stock
+                </a>
+              <?php else : ?>
+                <a class="card-action-btn cart-btn" href="<?= BASE_URL . 'add-to-cart?id=' . $pro['id'] ?>">
                 <ion-icon name="bag-handle-outline" aria-hidden="true"></ion-icon>Add to Cart
                 </a>
-                <?php else : ?>
-                  <button class="card-action-btn cart-btn">
-                    <a href="<?= BASE_URL . 'form-dangnhap' ?>">Please login</a>
-                  </button>
-                <?php endif ?>
+              <?php endif?>
+              
                 <!-- =======Nút yêu thích======== -->
 
                 <?php if (isset($_SESSION['user']) && $_SESSION['user'] != null) : ?>

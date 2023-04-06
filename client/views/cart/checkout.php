@@ -1,21 +1,21 @@
-<h1 class="text-center font-bold text-[35px] py-7">Pay</h1>
-<div class="min-h-screen p-7 leading-loose mx-auto max-w-5xl">
-  <form method="post" action="<?= BASE_URL . 'pay-cart'?>" class="max-w-5xl m-4 p-4 bg-white rounded shadow-xl">
-    <p class="text-gray-800 font-medium">Billing Information</p>
-    <div class="">
+
+<div class="min-h-screen p-7 leading-loose mx-auto max-w-full">
+  <form method="post" action="<?= BASE_URL . 'pay-cart'?>" class="max-w-7xl p-4 mx-auto bg-white rounded shadow-xl">
+    <p class="text-gray-800 text-[20px] font-bold ">Billing Information</p>
+    <div class="py-4">
       <label class="block mb-1 text-sm text-gray-600" for="cus_name">Name</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="name" type="text" required placeholder="Your Name" aria-label="Name">
+      <input class="w-full px-2 py-2 border-gray-500 border-[1px] border-solid text-gray-700 bg-gray-100 rounded" id="cus_name" name="name" type="text" required placeholder="Your Name" aria-label="Name">
     </div>
-    <div class="mt-2">
+    <div class="py-4">
       <label class="block text-sm mb-1 text-gray-600" for="cus_email">Email</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="email" type="text" required placeholder="Your Email" aria-label="Email">
+      <input class="w-full px-2 py-2 border-gray-500 border-[1px] border-solid text-gray-700 bg-gray-100 rounded" id="cus_email" name="email" type="text" required placeholder="Your Email" aria-label="Email">
     </div>
-    <div class="mt-2">
+    <div class="py-4">
       <label class=" block text-sm mb-1 text-gray-600" for="cus_email">Address</label>
-      <input class="w-full px-2 py-2  text-gray-700 bg-gray-200 rounded" id="cus_email" name="address" type="text" required placeholder="Street" aria-label="Email">
+      <input class="w-full px-2 py-2 border-gray-500 border-[1px] border-solid  text-gray-700 bg-gray-100 rounded" id="cus_email" name="address" type="text" required placeholder="Street" aria-label="Email">
     </div>
       <label class="block text-sm mb-1 text-gray-600" for="cus_name">Phone</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="phone" type="number" required  placeholder="Your phone">
+      <input class="w-full px-2 py-2 border-gray-500 border-[1px] border-solid text-gray-700 bg-gray-100 rounded" id="cus_name" name="phone" type="number" required  placeholder="Your phone">
       <button type="submit" class="px-7 py-1 mt-5 text-white rounded bg-blue-500">Buy</button>
     </div>
   </form>

@@ -51,7 +51,7 @@
               <li>
                 <a class="inline px-3 py-1 ml-2 border-black border  bg-white text-black rounded hover:bg-black hover:text-white" href="<?= BASE_URL . 'thoat' ?>">Logout</a>
               </li>
-
+              
               <button class="header-action-btn">
               <a href="<?= BASE_URL . 'product-in-cart'?>">
               <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
@@ -70,21 +70,24 @@
             </div>
           <?php
           } else { ?>
-            <div>
+            <div class="flex">
+            <button class="header-action-btn">
+              <a href="<?= BASE_URL . 'product-in-cart'?>">
+              <ion-icon name="cart-outline" aria-hidden="true"></ion-icon>
+                <p class="header-action-label">Cart</p>
+              </a>
+                <div class="btn-badge green" aria-hidden="true"><?= countCartNumber() ?></div>
+              </button>
+
               <a href="<?= BASE_URL . 'form-dangnhap' ?>">
                 <button class="header-action-btn">
                   <ion-icon name="person-outline" aria-hidden="true"></ion-icon>
                   <p class="header-action-label">Sign in</p>
                 </button>
               </a>
+              
             </div>
-            <button class="header-action-btn">
-              <ion-icon name="search-outline" aria-hidden="true"></ion-icon>
-
-              <p class="header-action-label">Search</p>
-            </button>
-
-
+          
         </div>
       <?php } ?>
 

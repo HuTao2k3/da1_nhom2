@@ -279,5 +279,5 @@ switch ($url) {
         break;
 
     default:
-        echo "404 NOT FOUND";
+        echo '<h1 class="text-[50px]">404 NOT FOUND</h1>';
 }
