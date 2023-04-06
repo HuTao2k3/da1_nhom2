@@ -5,7 +5,7 @@
     <div class="tab">
       <div class="tab-list">
         <a class="tab-item" href="<?= BASE_URL . 'san-pham' ?>">All product</a>
-        <?php foreach ($listCategory as $cate) : ?>
+        <?php foreach ($listCategory as $cate):?>
           <a class="tab-item" href="<?= BASE_URL . 'loc-san-pham?id=' . $cate['id'] ?>"><?= $cate['categoryName'] ?></a>
         <?php endforeach ?>
       </div>

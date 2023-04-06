@@ -17,13 +17,15 @@
 
     function getAccount()
 {
-     $id = $_GET['id'];
+    
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
      $sql = "SELECT * FROM `taikhoan` WHERE id=$id";
      $ac = pdo_query_one($sql);
      adminRender('account/update.php', compact('ac'));
  }
      function updateAccount()
 {
+    $id = isset($_GET['id']) ? $_GET['id'] : "";
      $id = $_POST['id'];
      $name = $_POST['user'];
      $pass = $_POST['pass'];

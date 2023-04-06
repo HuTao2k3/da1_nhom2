@@ -40,6 +40,13 @@
 				<span class="text">Send mail</span>
 			</a>
 		</li>
+
+		<li>
+			<a href="<?= ADMIN_URL  . 'quan-ly-hoa-don'?>">
+			<i class='bx bxs-credit-card-alt'></i>
+				<span class="text">Order</span>
+			</a>
+		</li>
 	</ul>
 	<ul class="side-menu">
 		<li>

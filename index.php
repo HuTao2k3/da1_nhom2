@@ -223,7 +223,7 @@ switch ($url) {
         require_once './admin/business/category.php';
         updateCate();
         break;
-        // ======= admin product ============
+        // ======= admin product ===========
     case "web-management/san-pham":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/product.php";
@@ -258,6 +258,24 @@ switch ($url) {
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/product.php";
         updatePro();
+        break;
+
+    case "web-management/quan-ly-hoa-don":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/orders.php";
+        orderIndex();
+        break;
+
+    case "web-management/chi-tiet-don-hang":
+        checkAuth([ADMIN_ROLE]);
+        require_once './admin/business/orders.php';
+        detailOrder();
+        break;
+        
+    case "web-management/cap-nhat-trang-thai":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/orders.php";
+        updateStatus();
         break;
 
     default:

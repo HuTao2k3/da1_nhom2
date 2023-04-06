@@ -43,8 +43,9 @@ function payCart(){
     $phone = $_POST['phone'];
     $address = $_POST['address'];
     $note = $_POST['note'];
+    // $created_at = $updated_at = date('Y-m-d H:s:i');
     //insert dữ liệu tạo hóa đơn
-    $createInvoiceQuery = "INSERT INTO `invoices` (customer_name,customer_phone_number,customer_email,customer_address,note) VALUES ('$name','$email',$phone,'$address','$note')";
+    $createInvoiceQuery = "INSERT INTO `invoices` (customer_name,customer_phone_number,customer_email,customer_address,note) VALUES ('$name',$phone,'$email','$address','$note')";
     $invoiceId = insertDataAndGetId($createInvoiceQuery);
     //chạy vòng lặp qua các phần tử của giỏ hàng , sau đó insert dữ liệu vào bảng invoices_detail 
     foreach($_SESSION['cart'] as $item){
@@ -52,7 +53,7 @@ function payCart(){
         $price = $item['price'];
         $quantity = $item['quantity'];
         $totalPrice += $price*$quantity;
-        $inserInvoiceDetailQuery = "INSERT INTO `invoices_detail` (invoice_id,product_id,quantity,unti_price) VALUES ($invoiceId,$productId, $price,$quantity)"; 
+        $inserInvoiceDetailQuery = "INSERT INTO `invoices_detail` (invoice_id,product_id,quantity,unti_price) VALUES ($invoiceId,$productId,$quantity, $price)"; 
         pdo_execute($inserInvoiceDetailQuery);
     }
     //Cập nhật tổng tiền hóa đơn
