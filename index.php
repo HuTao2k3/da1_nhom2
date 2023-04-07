@@ -6,6 +6,7 @@ require_once "./dao/pdo.php";
 require_once "./admin/business/category.php";
 require_once "./client/business/category.php";
 require_once "./client/business/size.php";
+require_once "./client/business/comment.php";
 //-----------mailer-------------
 require_once './PHPMailer-master/src/PHPMailer.php';
 require_once './PHPMailer-master/src/SMTP.php';
@@ -35,6 +36,10 @@ switch ($url) {
     case "about":
         require_once "./client/business/about.php";
         about();
+        break;
+    case "contact":
+        require_once "./client/business/contact.php";
+        contact();
         break;
     case "yeu-thich":
         require_once "./client/business/home.php";

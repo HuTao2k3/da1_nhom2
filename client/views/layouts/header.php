@@ -141,7 +141,7 @@
           </li>
 
           <li>
-            <a href="<?= BASE_URL . 'lien-he' ?>" class="navbar-link">Contact</a>
+            <a href="<?= BASE_URL . 'contact' ?>" class="navbar-link">Contact</a>
           </li>
 
         </ul>

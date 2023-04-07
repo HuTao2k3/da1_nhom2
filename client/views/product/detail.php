@@ -45,7 +45,44 @@
     <p class="text-center min-h-full"><?= $pro['desc'] ?></p>
 </div>
 <!-- from binh luan -->
+<section style="background-color: #eee;">
+  <div class="container my-5 py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-12 col-lg-10 col-xl-8">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-start align-items-center">
 
+                <?php $listbl = getallcomment()?>
+                <?php foreach ($listbl as $ac) : ?>
+
+                  
+              <div>
+                <p><?= $ac['noidung'] ?></p>
+                <h6><?= $ac['iduser'] ?></h6>
+                <h6><?= $ac['idpro'] ?></h6>
+                <p><?= $ac['ngaybinhluan'] ?></p>
+              </div>
+              <?php endforeach ?>
+          </div>
+          <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+            <div class="d-flex flex-start w-100">
+              <div class="form-outline w-100">
+                <textarea  id="textAreaExample" rows="3"
+                  style="background: #fff;"></textarea>
+                <label class="form-label" for="textAreaExample"name="noidung">Message</label>
+              </div>
+            </div>
+            <div class="float-end mt-2 pt-1">
+            <input class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="submit" value="Comment" name="binhluan">
+            <input class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" type="reset" value="Cancel">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- sản phẩm cùng danh mục -->
 <?php if(empty($listgeneral)):?>
    <span></span>
