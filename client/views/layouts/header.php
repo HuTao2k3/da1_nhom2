@@ -133,7 +133,7 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link">About</a>
+            <a href="<?= BASE_URL . 'about' ?>" class="navbar-link">About</a>
           </li>
 
           <li>

@@ -32,7 +32,10 @@ switch ($url) {
         require_once "./client/business/product.php";
         filter();
         break;
-    
+    case "about":
+        require_once "./client/business/about.php";
+        about();
+        break;
     case "yeu-thich":
         require_once "./client/business/home.php";
         favourite();

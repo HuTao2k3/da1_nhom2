@@ -54,7 +54,7 @@ function dangky()
         // Validate uername;
         if (empty($_POST['user'])) {
             $errors['user'] = 'User không được để trống';
-        } elseif ($_POST['user'] < 5) {
+        } elseif ($_POST['user'] >= 5) {
             $errors['user'] = 'User phải lớn hơn 5 ký tự';
         } else {
             $user = $_POST['user'];
@@ -110,7 +110,7 @@ function dangnhap()
             // Validate uername;
             if (empty($_POST['user'])) {
                 $errors['user'] = 'User không được để trống';
-            } elseif ($_POST['user'] < 5) {
+            } elseif ($_POST['user'] >= 5) {
                 $errors['user'] = 'User phải lớn hơn 5 ký tự';
             } else {
                 $_SESSION['user'] = $checkuser;
@@ -153,7 +153,7 @@ function edit_taikhoan()
         // Validate uername;
         if (empty($_POST['user'])) {
             $errors['user'] = 'User không được để trống';
-        } elseif ($_POST['user'] < 5) {
+        } elseif ($_POST['user'] >= 5) {
             $errors['user'] = 'User phải lớn hơn 5 ký tự';
         } else {
             $user = $_POST['user'];
@@ -169,7 +169,7 @@ function edit_taikhoan()
         // Validate Address;
         if (empty($_POST['address'])) {
             $errors['address'] = 'address không được để trống';
-        } elseif ($_POST['address'] < 5) {
+        } elseif ($_POST['address'] >= 5) {
             $errors['address'] = 'address phải lớn hơn 5 ký tự';
         } else {
             $user = $_POST['address'];
