@@ -100,6 +100,13 @@ function pdo_query_value($sql){
         unset($conn);
     }
 }
+function select_page($sql)
+{
+    $conn = pdo_get_connection();
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+    return $listRecord = $stmt->fetchAll();
+}
 function insertDataAndGetId($sql)
 {
     $connect = pdo_get_connection();

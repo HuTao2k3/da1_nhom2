@@ -16,6 +16,9 @@
     </div>
       <label class="block text-sm mb-1 text-gray-600" for="cus_name">Phone</label>
       <input class="w-full px-2 py-2 border-gray-500 border-[1px] border-solid text-gray-700 bg-gray-100 rounded" id="cus_name" name="phone" type="number" required  placeholder="Your phone">
+
+      <label class="block text-sm mb-1 text-gray-600" for="cus_name">Note</label>
+     <textarea name="note" id="" cols="30" rows="10"></textarea>
       <button type="submit" class="px-7 py-1 mt-5 text-white rounded bg-blue-500">Buy</button>
     </div>
   </form>

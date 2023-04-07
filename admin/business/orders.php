@@ -23,7 +23,8 @@ function updateStatus() {
      if(isset($_POST['btn'])){
      $id = $_POST['id'];
      $status = $_POST['status'];
-     $sql = "UPDATE `invoices` SET `status`='$status' WHERE id=$id";
+     $update_at = date('Y-m-d H:s:i');
+     $sql = "UPDATE `invoices` SET `status`='$status' , update_at = '$update_at' WHERE id=$id";
      pdo_execute($sql);
      header("location:" . ADMIN_URL . 'quan-ly-hoa-don');
      } 

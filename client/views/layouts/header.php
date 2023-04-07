@@ -66,6 +66,12 @@
                 <div class="btn-badge" aria-hidden="true"><?= count(getFvrProduct()) ?></div>
               </button>
 
+              <a class="pl-3" href="<?= BASE_URL . 'tim-kiem-don-hang'?>">
+                <button class="header-action-btn">
+                <ion-icon name="archive-outline"></ion-icon>
+                  <p class="header-action-label">Purchased</p>
+                </button>
+              </a>
               <li>
             </div>
           <?php
@@ -85,9 +91,14 @@
                   <p class="header-action-label">Sign in</p>
                 </button>
               </a>
-              
+
+              <a href="<?= BASE_URL . 'tim-kiem-don-hang'?>">
+                <button class="header-action-btn">
+                <ion-icon name="archive-outline"></ion-icon>
+                  <p class="header-action-label">Purchased</p>
+                </button>
+              </a>
             </div>
-          
         </div>
       <?php } ?>
 

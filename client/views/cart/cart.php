@@ -7,7 +7,6 @@
             <th class="w-[5%] pr-10">Quantity</th>
             <th class="w-[5%] ">Category</th>
             <th class="w-[20%]">Price</th>
-            <th class="w-[20%]">Remove</th>
         </thead>
 
         <tbody >
@@ -28,13 +27,13 @@
             </td>
             <td class="w-[20%]"><?= number_format($item['price'] * $item['quantity'] ) ?>đ</td>
             <?php $totalPrice += $item['price'] * $item['quantity'] ?>
-            <td><i class='bx bxs-trash'></i></td>
                 <?php endforeach?>
             </tr>
         </tbody>
     </table>
  
     <div class="flex justify-between pt-3 mx-10">
+    <a class="px-7 py-1 text-white rounded bg-gray-500" href="<?= BASE_URL . 'xoa-san-pham'?>">Delete</a> 
     <span class="font-bold text-red-500">Total : <?= number_format($totalPrice)?>đ</span>
     <a class="px-7 py-1 text-white rounded bg-blue-500" href="<?= BASE_URL . 'form-pay-cart'?>">Pay</a> 
     </div>

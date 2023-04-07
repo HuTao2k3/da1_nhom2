@@ -107,6 +107,36 @@ switch ($url) {
         require_once "./client/business/cart.php";
         payCart();
         break;
+
+    case "tim-kiem-don-hang":
+        require_once "./client/business/cart.php";
+        seachOder();
+        break;
+        
+    case "san-pham-da-mua":
+        require_once "./client/business/cart.php";
+        ordered();
+        break;
+
+    case "xoa-san-pham":
+        require_once "./client/business/cart.php";
+        deleteProductInCart();
+        break;
+
+    case 'khong-tim-thay':
+        require_once "./client/business/home.php";
+        renderEmty();
+        break;
+
+    case 'chi-tiet-hoa-don':
+        require_once "./client/business/cart.php";
+        clientDetailOder();
+        break;
+    
+    case "cap-nhat-trang-thai":
+        require_once "./client/business/cart.php";
+        updateClientStatus();
+        break;
         
     case 'thoat':
         session_unset();
@@ -150,26 +180,31 @@ switch ($url) {
         require_once "./admin/business/contactUser.php";
         sendMail();
         break;
+
     case "web-management/binh-luan":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/comment.php";
         listcomment();
         break;
+
     case "web-management/binh-luan/xoa":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/comment.php";
         Deletebinhluan();
         break;
+
     case "web-management/binh-luan/update":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/comment.php";
         updatebinhluan();
         break;
+
     case "web-management/binh-luan/getbinhluan":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/comment.php";
         getbinhluan();
         break;
+        
     case "web-management":
         checkAuth([ADMIN_ROLE]);
         require_once "./admin/business/dashboard.php";

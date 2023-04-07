@@ -35,4 +35,7 @@ function deleteFavorite()
     pdo_query_one($sql);
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
+function renderEmty(){
+    clientRender('home/emty.php');
+}
 ?>

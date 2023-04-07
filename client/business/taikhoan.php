@@ -14,10 +14,11 @@ function insert_taikhoan($email, $user, $pass)
     $sql = "insert into taikhoan(email,user,pass) values('$email', '$user', '$pass')";
     pdo_execute($sql);
 }
-function checkuser($user, $pass)
+function checkuser($user)
 {
-    $sql = "select * from taikhoan where user='" . $user . "' AND pass='" . $pass . "'";
+    $sql = "SELECT * FROM `taikhoan` WHERE user = '$user' ";
     $sp = pdo_query_one($sql);
+    // dd($sp);
     return $sp;
 }
 
@@ -41,7 +42,7 @@ function dangky()
         $pass = $_POST['pass'];
         $pass = $_POST['pass-comfirm'];
         $errors = [];
-
+        
         // Validate email;
         if (empty($_POST['email'])) {
             $errors['email'] = 'Vui lòng nhập email';
@@ -50,7 +51,6 @@ function dangky()
         } else {
             $email = $_POST['email'];
         }
-
         // Validate uername;
         if (empty($_POST['user'])) {
             $errors['user'] = 'User không được để trống';
@@ -59,7 +59,6 @@ function dangky()
         } else {
             $user = $_POST['user'];
         }
-
         // Validate Password
         if (empty($_POST['pass'])) {
             $errors['pass'] = 'Pass không được để trống';
@@ -93,9 +92,13 @@ function dangnhap()
     if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
         $user = $_POST['user'];
         $pass = $_POST['pass'];
-        $checkuser = checkuser($user, $pass);
+        $checkuser = checkuser($user);
         $errors = [];
-
+        // if($checkuser['user']){
+        // header('location:' . BASE_URL );
+        // }else {
+        // echo 'Tài khảo không tồn tại';
+        // }
         // Validate Password
         if (empty($_POST['pass'])) {
             $errors['pass'] = 'Password không được để trống';
@@ -119,6 +122,7 @@ function dangnhap()
             header('location:' . BASE_URL );
         }
     }
+    
     clientRender('account/dangnhap.php', compact('errors'));
 }
 function form_dangnhap()
