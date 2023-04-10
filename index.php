@@ -230,6 +230,21 @@ switch ($url) {
         require_once './admin/business/account.php';
         addAccount();
         break;
+    case "web-management/banner":
+        checkAuth([ADMIN_ROLE]);
+        require_once "./admin/business/banner.php";
+        bannerIndex();
+        break;
+    case "web-management/banner/them-banner":
+        checkAuth([ADMIN_ROLE]);
+        require_once './admin/business/banner.php';
+        addbanner();
+        break;
+    case "web-management/banner/luu-them-banner":
+        checkAuth([ADMIN_ROLE]);
+        require_once './admin/business/banner.php';
+        addSavebanner();
+        break;
         // danh muc
     case "web-management/danh-muc":
         checkAuth([ADMIN_ROLE]);

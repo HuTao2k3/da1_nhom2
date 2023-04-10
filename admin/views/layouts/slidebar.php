@@ -47,6 +47,12 @@
 				<span class="text">Order</span>
 			</a>
 		</li>
+		<li>
+			<a href="<?= ADMIN_URL  . 'banner'?>">
+			<i class='bx bxs-image'></i>
+				<span class="text">Banner</span>
+			</a>
+		</li>
 	</ul>
 	<ul class="side-menu">
 		<li>
