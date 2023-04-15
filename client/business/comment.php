@@ -1,6 +1,6 @@
 <?php
  function form_binhluan(){
-    clientRender('peoduct/detail.php');
+    clientRender('product/detail.php');
 }
 function getallcomment(){
     $sql = "SELECT * FROM `binhluan`";

@@ -137,7 +137,7 @@
           </li>
 
           <li>
-            <a href="#blog" class="navbar-link">Blog</a>
+            <a href="<?= BASE_URL . 'blog' ?>" class="navbar-link">Blog</a>
           </li>
 
           <li>

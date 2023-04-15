@@ -66,6 +66,11 @@ switch ($url) {
         dangky();
         break;
 
+    case 'blog':
+        require_once "./client/business/blog.php";
+        blog();
+        break;
+
     case 'dangnhap':
         require_once "./client/business/taikhoan.php";
         dangnhap();
